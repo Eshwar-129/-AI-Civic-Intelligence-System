@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+streamlit
+ultralytics
+langgraph
+pillow

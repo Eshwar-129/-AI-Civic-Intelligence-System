@@ -1,0 +1,214 @@
+
+--- NOTIFICATION ---
+Time: 2026-02-26 19:12:33
+To: general@gov.in
+Subject: Civic Issue Detected: road_damage
+Message:
+**Official Notification**
+
+**To:** General Department  
+**Subject:** Urgent: Road Damage Report  
+
+Attention: Immediate action required. We have identified significant road damage that poses a safety risk. Please assess and initiate repairs as soon as possible.  
+
+Thank you.
+-------------------
+
+--- NOTIFICATION ---
+Time: 2026-02-26 19:14:28
+To: general@gov.in
+Subject: Civic Issue Detected: road_damage
+Message:
+**Official Notification**
+
+**To:** General Department  
+**Subject:** Urgent Road Damage Report
+
+Attention: Immediate action required.
+
+We have identified significant road damage that poses a safety risk to the public. Please dispatch a team to assess and address the issue as soon as possible.
+
+Thank you for your prompt attention to this matter.
+
+Best regards,  
+[Your Name]  
+Civic Infrastructure Monitoring Assistant
+-------------------
+
+--- NOTIFICATION ---
+Time: 2026-02-26 19:15:03
+To: general@gov.in
+Subject: Civic Issue Detected: road_damage
+Message:
+Subject: Road Damage Notification
+
+Dear General Department,
+
+We have identified road damage that requires attention. While the priority is low, please assess the situation at your earliest convenience to ensure safety and prevent further deterioration.
+
+Thank you.
+
+Best regards,  
+[Your Name]  
+Civic Infrastructure Monitoring Assistant
+-------------------
+
+--- NOTIFICATION ---
+Time: 2026-02-26 19:15:39
+To: general@gov.in
+Subject: Civic Issue Detected: road_damage
+Message:
+Subject: Road Damage Notification
+
+Dear General Department,
+
+We have identified an issue of road damage that requires your attention. Please assess the situation and initiate necessary repairs at your earliest convenience.
+
+Thank you for your prompt action.
+
+Best regards,  
+[Your Name]  
+Civic Infrastructure Monitoring Assistant
+-------------------
+
+--- NOTIFICATION ---
+Time: 2026-03-10 10:27:25
+To: general@gov.in
+Subject: Inspection Request for Potholes and Roadcracks
+Message:
+Dear General Department,
+
+We have received a report regarding the presence of potholes and roadcracks in our municipality. Although the specific location is currently unavailable, we kindly request your team to conduct an inspection at your earliest convenience. Addressing these issues will help maintain the safety and quality of our road infrastructure.
+
+Thank you for your attention to this matter.
+
+Best regards,
+
+Civic Infrastructure Monitoring Assistant
+-------------------
+
+--- NOTIFICATION ---
+Time: 2026-03-10 10:30:03
+To: general@gov.in
+Subject: Urgent Inspection Required: Potholes and Roadcracks
+Message:
+Dear General Department,
+
+We have identified a high-priority issue concerning potholes and roadcracks that requires immediate attention. The specific location details are currently unavailable, but the urgency of this matter necessitates prompt inspection and resolution to ensure public safety and maintain infrastructure integrity.
+
+Please prioritize this issue and take the necessary actions to address it as soon as possible.
+
+Thank you for your attention to this matter.
+
+Best regards,
+
+Civic Infrastructure Monitoring Assistant
+-------------------
+
+--- NOTIFICATION ---
+Time: 2026-03-10 10:31:17
+To: general@gov.in
+Subject: Inspection Request for Potholes and Roadcracks
+Message:
+Dear General Department,
+
+We have received reports regarding the presence of potholes and roadcracks in our municipality. Although the specific location is currently unavailable, we consider this issue to be of medium priority and request your team to conduct an inspection at your earliest convenience. Please assess the situation and take the necessary actions to resolve the issue promptly.
+
+Thank you for your attention to this matter.
+
+Best regards,
+
+Civic Infrastructure Monitoring Assistant
+-------------------
+
+--- NOTIFICATION ---
+Time: 2026-03-10 10:34:04
+To: general@gov.in
+Subject: Urgent Inspection Required for Electrical Poles
+Message:
+Dear General Department,
+
+We have identified a high-priority issue concerning electrical poles that requires immediate attention. Unfortunately, the specific location details are currently unavailable. We kindly request your team to conduct an inspection and resolve this matter at the earliest possible convenience.
+
+Thank you for your prompt attention to this urgent issue.
+
+Best regards,
+Civic Infrastructure Monitoring Team
+-------------------
+
+--- NOTIFICATION ---
+Time: 2026-03-10 10:44:48
+To: general@gov.in
+Subject: Request for Inspection and Resolution of Potholes and Roadcracks
+Message:
+Dear General Department,
+
+We have received reports regarding the presence of potholes and roadcracks in our municipality. While the priority for this issue is classified as low, we kindly request that your team inspects the affected areas at your earliest convenience and takes the necessary steps to resolve the issue.
+
+Thank you for your attention to this matter.
+
+Best regards,
+
+Civic Infrastructure Monitoring Team
+-------------------
+
+--- NOTIFICATION ---
+Time: 2026-03-10 10:46:23
+To: sanitation@gov.in
+Subject: Inspection Request for Garbage Issue
+Message:
+Dear Sanitation Department,
+
+We have received a report regarding a garbage issue that requires your attention. The specific location details are currently unavailable, but it has been categorized as a medium priority. 
+
+Please conduct an inspection at your earliest convenience and take the necessary steps to resolve the issue. Thank you for your prompt attention to this matter.
+
+Best regards,
+Civic Infrastructure Monitoring Team
+-------------------
+
+--- NOTIFICATION ---
+Time: 2026-03-10 10:47:30
+To: general@gov.in
+Subject: Urgent Inspection Required for Road Signs
+Message:
+Dear General Department,
+
+We have identified a high-priority issue regarding road signs that requires immediate attention. Unfortunately, the specific location details are currently unavailable. We kindly request your team to conduct an inspection and resolve this matter at the earliest possible convenience to ensure public safety.
+
+Thank you for your prompt attention to this issue.
+
+Best regards,
+Civic Infrastructure Monitoring Assistant
+-------------------
+
+--- NOTIFICATION ---
+Time: 2026-03-10 10:49:31
+To: electric@gov.in
+Subject: Urgent Inspection Required for Electrical Poles
+Message:
+Dear Electrical Department,
+
+We have identified a high-priority issue concerning electrical poles that requires immediate attention. Unfortunately, the specific location details are currently unavailable. We kindly request your team to conduct an inspection and resolve the issue at your earliest convenience.
+
+Thank you for your prompt attention to this matter.
+
+Best regards,
+Civic Infrastructure Monitoring Team
+-------------------
+
+--- NOTIFICATION ---
+Time: 2026-03-10 18:53:32
+To: sanitation@gov.in
+Subject: Request for Inspection and Resolution of Garbage Issue
+Message:
+Dear Sanitation Department,
+
+We have received a report regarding a garbage issue categorized as medium priority. Unfortunately, the specific location details are currently unavailable. We kindly request your team to conduct an inspection and take the necessary actions to resolve this matter at your earliest convenience.
+
+Thank you for your attention to this issue.
+
+Best regards,
+
+Civic Infrastructure Monitoring Team
+-------------------

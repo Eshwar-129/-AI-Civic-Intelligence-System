@@ -6,3 +6,4 @@ pytesseract
 sendgrid
 python-multipart
 langgraph
+fastmcp

@@ -23,7 +23,7 @@ os.makedirs(TEMP_DIR, exist_ok=True)
 # MODEL CONFIGURATION
 # =========================================================
 
-YOLO_MODEL_PATH = r"C:\Users\admin\Downloads\Main project\backend\model\best.pt"
+YOLO_MODEL_PATH = r"model\best.pt"
 
 # =========================================================
 # DATABASE CONFIGURATION

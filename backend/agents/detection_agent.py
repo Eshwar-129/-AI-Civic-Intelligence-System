@@ -1,5 +1,5 @@
 import json
-from backend.mcp.civic_mcp import mcp
+from mcp.civic_mcp import mcp
 
 async def detection_agent(state: dict) -> dict:
     if "image_path" not in state:

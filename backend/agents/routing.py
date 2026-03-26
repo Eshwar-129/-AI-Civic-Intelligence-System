@@ -1,4 +1,4 @@
-from backend.config import DEPARTMENT_MAP, DEFAULT_DEPARTMENT, DEFAULT_EMAIL
+from config import DEPARTMENT_MAP, DEFAULT_DEPARTMENT, DEFAULT_EMAIL
 
 
 #def routing_agent(state: dict) -> dict:
@@ -18,7 +18,7 @@ from backend.config import DEPARTMENT_MAP, DEFAULT_DEPARTMENT, DEFAULT_EMAIL
 #    return state
 
 import json
-from backend.mcp.civic_mcp import mcp
+from mcp.civic_mcp import mcp
 
 
 async def routing_agent(state: dict) -> dict:

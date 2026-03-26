@@ -118,7 +118,7 @@ from fastapi import File, UploadFile, Form, HTTPException
 
 from fastapi import File, UploadFile, Form, HTTPException
 # 1. ADD THIS IMPORT AT THE TOP OF YOUR FILE
-from backend.config import DEPARTMENT_MAP, DEFAULT_EMAIL
+from config import DEPARTMENT_MAP, DEFAULT_EMAIL
 
 
 @app.post("/verify")

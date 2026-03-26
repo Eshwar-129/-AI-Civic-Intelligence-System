@@ -1,6 +1,6 @@
 import json
-from backend.mcp.civic_mcp import mcp
-from backend.config import (
+from mcp.civic_mcp import mcp
+from config import (
     GPS_TOLERANCE,
     STATUS_CLOSED,
     STATUS_IN_PROGRESS,

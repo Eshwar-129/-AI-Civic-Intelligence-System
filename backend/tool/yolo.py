@@ -6,6 +6,7 @@ from pathlib import Path
 from config import YOLO_MODEL_PATH
 
 model = YOLO(YOLO_MODEL_PATH)
+model.to("cpu") 
 
 
 def run_detection(image_path: str):

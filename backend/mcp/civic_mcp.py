@@ -10,11 +10,11 @@ import base64
 from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition, ContentId
 import json
 from fastmcp import FastMCP
-from backend.tool.yolo import run_detection
-from backend.tool.gps import extract_gps
-from backend.tool.notify import send_notification
-from backend.tool.db_tool import insert_issue
-from backend.config import DEPARTMENT_MAP, DEFAULT_DEPARTMENT, DEFAULT_EMAIL
+from tool.yolo import run_detection
+from tool.gps import extract_gps
+from tool.notify import send_notification
+from tool.db_tool import insert_issue
+from config import DEPARTMENT_MAP, DEFAULT_DEPARTMENT, DEFAULT_EMAIL
 import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail

@@ -9,7 +9,7 @@ import os
 import sqlite3
 from typing import List, Dict, Any
 
-from backend.config import DB_PATH
+from config import DB_PATH
 
 
 # =========================================================

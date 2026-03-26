@@ -48,7 +48,7 @@ from openai import OpenAI
 #
 #    return state
 import json
-from mcp.civic_mcp import mcp
+from mcp_tools.civic_mcp import mcp
 from config import STATUS_ASSIGNED
 
 

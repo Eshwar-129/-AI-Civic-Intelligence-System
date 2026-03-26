@@ -1,4 +1,4 @@
-from backend.tool.gps import extract_gps
+from tool.gps import extract_gps
 
 
 #def location_agent(state: dict) -> dict:
@@ -13,7 +13,7 @@ from backend.tool.gps import extract_gps
 
 #    return state
 import json
-from backend.mcp.civic_mcp import mcp
+from mcp.civic_mcp import mcp
 
 
 async def location_agent(state: dict) -> dict:

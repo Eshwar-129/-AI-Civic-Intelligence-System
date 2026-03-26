@@ -18,7 +18,7 @@ from config import DEPARTMENT_MAP, DEFAULT_DEPARTMENT, DEFAULT_EMAIL
 #    return state
 
 import json
-from mcp.civic_mcp import mcp
+from mcp_tools.civic_mcp import mcp
 
 
 async def routing_agent(state: dict) -> dict:

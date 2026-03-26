@@ -4,16 +4,16 @@ Civic AI FastAPI Backend
 Exposes detection, verification, and dashboard APIs
 for the agentic civic intelligence system.
 """
-from backend.tool.db_tool import get_issue, update_issue_status # Add update_issue_status here!
+from tool.db_tool import get_issue, update_issue_status # Add update_issue_status here!
 import os
 import shutil
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 
-from backend.graph.civic_graph import graph
-from backend.config import TEMP_DIR
-from backend.tool.db_tool import init_db, conn,get_issue
+from graph.civic_graph import graph
+from config import TEMP_DIR
+from tool.db_tool import init_db, conn,get_issue
 
 from fastapi.staticfiles import StaticFiles
 

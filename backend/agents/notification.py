@@ -1,6 +1,6 @@
-from backend.tool.db_tool import insert_issue
-from backend.tool.notify import send_notification
-from backend.config import STATUS_ASSIGNED
+from tool.db_tool import insert_issue
+from tool.notify import send_notification
+from config import STATUS_ASSIGNED
 from openai import OpenAI
 
 # OpenRouter client
@@ -48,8 +48,8 @@ from openai import OpenAI
 #
 #    return state
 import json
-from backend.mcp.civic_mcp import mcp
-from backend.config import STATUS_ASSIGNED
+from mcp.civic_mcp import mcp
+from config import STATUS_ASSIGNED
 
 
 async def notification_agent(state: dict) -> dict:

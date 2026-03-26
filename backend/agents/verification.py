@@ -1,5 +1,5 @@
 import json
-from mcp.civic_mcp import mcp
+from mcp_tools.civic_mcp import mcp
 from config import (
     GPS_TOLERANCE,
     STATUS_CLOSED,

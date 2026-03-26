@@ -5,7 +5,13 @@ opencv-python-headless
 pytesseract
 sendgrid
 python-multipart
+
 langgraph
 fastmcp
-ultralytics 
-sqlite3
+ultralytics
+
+numpy
+pydantic
+starlette
+anyio
+typing-extensions

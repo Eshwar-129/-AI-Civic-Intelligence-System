@@ -5,7 +5,7 @@ Handles SQLite operations for Civic AI system.
 """
 
 import sqlite3
-from backend.config import DB_PATH
+from config import DB_PATH
 
 
 conn = sqlite3.connect(DB_PATH, check_same_thread=False)

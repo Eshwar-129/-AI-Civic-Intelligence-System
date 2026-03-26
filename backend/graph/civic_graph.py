@@ -11,12 +11,12 @@ from typing import TypedDict, Optional
 from langgraph.graph import StateGraph, END
 
 # Import all agents
-from backend.agents.detection_agent import detection_agent
-from backend.agents.location_agent import location_agent
-from backend.agents.severity import severity_agent
-from backend.agents.routing import routing_agent
-from backend.agents.notification import notification_agent
-from backend.agents.verification import verification_agent
+from agents.detection_agent import detection_agent
+from agents.location_agent import location_agent
+from agents.severity import severity_agent
+from agents.routing import routing_agent
+from agents.notification import notification_agent
+from agents.verification import verification_agent
 
 
 # =========================================================

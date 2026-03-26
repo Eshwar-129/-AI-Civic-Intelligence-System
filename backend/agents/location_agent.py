@@ -13,7 +13,7 @@ from tool.gps import extract_gps
 
 #    return state
 import json
-from mcp.civic_mcp import mcp
+from mcp_tools.civic_mcp import mcp
 
 
 async def location_agent(state: dict) -> dict:

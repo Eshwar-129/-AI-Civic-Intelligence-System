@@ -3,7 +3,7 @@ import os
 import shutil
 from ultralytics import YOLO
 from pathlib import Path
-from backend.config import YOLO_MODEL_PATH
+from config import YOLO_MODEL_PATH
 
 model = YOLO(YOLO_MODEL_PATH)
 

@@ -1,4 +1,4 @@
-from backend.config import (
+from config import (
     AREA_WEIGHT,
     CONFIDENCE_WEIGHT,
     PRIORITY_HIGH,

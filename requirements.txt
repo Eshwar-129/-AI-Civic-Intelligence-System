@@ -1,6 +1,3 @@
-fastapi
-uvicorn
 streamlit
-ultralytics
-langgraph
+requests
 pillow

@@ -7,13 +7,7 @@ easyocr==1.7.1
 python-bidi==0.4.2
 sendgrid
 python-multipart
-
 langgraph
 fastmcp
 ultralytics
-
 numpy
-pydantic
-starlette
-anyio
-typing-extensions

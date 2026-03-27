@@ -3,7 +3,8 @@ fastapi
 uvicorn
 pillow
 opencv-python-headless
-easyocr
+easyocr==1.7.1
+python-bidi==0.4.2
 sendgrid
 python-multipart
 

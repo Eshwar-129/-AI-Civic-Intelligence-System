@@ -69,27 +69,29 @@ if page == "Issue Detection":
         if st.button("🚀 Detect Issue"):
 
             with st.spinner("Running AI detection..."):
+                try:
+                    res = requests.post(
+                        f"{API_URL}/detect",
+                        files={"file": (uploaded.name, uploaded.getvalue(), uploaded.type)},
+                        timeout=30,
+                    )
+                except requests.exceptions.RequestException as e:
+                    st.error(f"Detection request failed: {e}")
+                    res = None
 
-                res = requests.post(
-                    f"{API_URL}/detect",
-                    files={"file":(uploaded.name, uploaded.getvalue(), uploaded.type)}
-                )
-
-            if res.status_code == 200:
-
+            if res and res.status_code == 200:
                 data = res.json()
 
                 st.success("Detection Completed")
 
                 if data.get("annotated_image"):
-
                     st.image(
                         data["annotated_image"],
                         caption="Detected Issue",
-                        width='stretch'
+                        width='stretch',
                     )
 
-                col1,col2 = st.columns(2)
+                col1, col2 = st.columns(2)
 
                 with col1:
                     st.metric("Issue Type", data.get("issue_type"))
@@ -114,11 +116,11 @@ if page == "Issue Detection":
 
                 st.subheader("Location")
 
-                st.write("Latitude:",lat)
-                st.write("Longitude:",lon)
+                st.write("Latitude:", lat)
+                st.write("Longitude:", lon)
 
                 if lat and lon:
-                    map_df = pd.DataFrame({"lat":[lat],"lon":[lon]})
+                    map_df = pd.DataFrame({"lat": [lat], "lon": [lon]})
                     st.map(map_df)
 
             else:
@@ -152,13 +154,18 @@ elif page == "Verification":
             with st.spinner("Verifying repair..."):
 
                 # 3. Send BOTH the file and the issue_id to the backend
-                res = requests.post(
-                    f"{API_URL}/verify",
-                    files={"file": (uploaded.name, uploaded.getvalue(), uploaded.type)},
-                    data={"issue_id": issue_id}  # <--- THIS IS THE MAGIC LINE
-                )
+                try:
+                    res = requests.post(
+                        f"{API_URL}/verify",
+                        files={"file": (uploaded.name, uploaded.getvalue(), uploaded.type)},
+                        data={"issue_id": issue_id},  # <--- THIS IS THE MAGIC LINE
+                        timeout=30,
+                    )
+                except requests.exceptions.RequestException as e:
+                    st.error(f"Verification request failed: {e}")
+                    res = None
 
-            if res.status_code == 200:
+            if res and res.status_code == 200:
 
                 data = res.json()
 
@@ -188,7 +195,7 @@ elif page == "Verification":
                         # Display it!
                         try:
                             st.image(clean_original, width='stretch')
-                        except Exception as e:
+                        except Exception:
                             st.error(f"Image found in DB, but missing from folder: {clean_original}")
 
                 with col2:
@@ -206,7 +213,7 @@ elif page == "Verification":
                     st.metric("Verification Result", data.get("verification"))
 
             else:
-                st.error(f"Verification failed: {res.text}")
+                st.error(f"Verification failed: {res.text if res else 'No response'}")
 
 # ======================================================
 # PAGE 3 — DASHBOARD
@@ -218,9 +225,13 @@ elif page == "Issues Dashboard":
 
     try:
 
-        res = requests.get(f"{API_URL}/issues")
+        try:
+            res = requests.get(f"{API_URL}/issues", timeout=20)
+        except requests.exceptions.RequestException as e:
+            st.error(f"Failed to fetch issues: {e}")
+            res = None
 
-        if res.status_code == 200:
+        if res and res.status_code == 200:
 
             issues = res.json()
 
@@ -251,11 +262,14 @@ elif page == "Analytics":
 
     try:
 
-        res = requests.get(f"{API_URL}/issues")
+        try:
+            res = requests.get(f"{API_URL}/issues", timeout=20)
+        except requests.exceptions.RequestException as e:
+            st.error(f"Failed to load analytics data: {e}")
+            res = None
 
-        if res.status_code != 200:
+        if not res:
             st.error("Failed to load data")
-
         else:
 
             issues = res.json()

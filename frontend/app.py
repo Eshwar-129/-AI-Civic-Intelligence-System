@@ -3,9 +3,7 @@ import requests
 import pandas as pd
 import plotly.express as px
 import os
-
-# Backend URL: prefer environment override, fall back to local backend
-API_URL = os.getenv("API_URL", "http://localhost:8000")
+API_URL = "https://eshwar109-ai-civic.hf.space"
 
 st.set_page_config(
     page_title="Civic AI Platform",

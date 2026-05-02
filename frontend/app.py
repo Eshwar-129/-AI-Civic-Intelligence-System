@@ -3,7 +3,9 @@ import requests
 import pandas as pd
 import plotly.express as px
 import os
-API_URL = "https://eshwar109-ai-civic.hf.space"
+
+# Backend URL: prefer environment override, fall back to local backend
+API_URL = os.getenv("API_URL", "http://localhost:8000")
 
 st.set_page_config(
     page_title="Civic AI Platform",
@@ -123,7 +125,14 @@ if page == "Issue Detection":
                     st.map(map_df)
 
             else:
-                st.error("Detection failed")
+                if res is None:
+                    st.error("Detection failed: no response (request exception)")
+                else:
+                    try:
+                        err_text = res.text
+                    except Exception:
+                        err_text = "<unreadable response>"
+                    st.error(f"Detection failed: status={res.status_code} - {err_text}")
 
 
 # ======================================================

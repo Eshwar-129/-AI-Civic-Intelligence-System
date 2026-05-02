@@ -64,7 +64,7 @@ if page == "Issue Detection":
 
     if uploaded:
 
-        st.image(uploaded, caption="Uploaded Image", width='stretch')
+        st.image(uploaded, caption="Uploaded Image")
 
         if st.button("🚀 Detect Issue"):
 
@@ -88,7 +88,6 @@ if page == "Issue Detection":
                     st.image(
                         data["annotated_image"],
                         caption="Detected Issue",
-                        width='stretch',
                     )
 
                 col1, col2 = st.columns(2)
@@ -147,7 +146,7 @@ elif page == "Verification":
     # 2. Only proceed if BOTH the ID and the image are provided
     if uploaded and issue_id:
 
-        st.image(uploaded, caption="Repair Image Uploaded", width='stretch')
+        st.image(uploaded, caption="Repair Image Uploaded")
 
         if st.button("Verify Resolution"):
 
@@ -194,13 +193,13 @@ elif page == "Verification":
 
                         # Display it!
                         try:
-                            st.image(clean_original, width='stretch')
+                            st.image(clean_original)
                         except Exception:
                             st.error(f"Image found in DB, but missing from folder: {clean_original}")
 
                 with col2:
                     st.subheader("Resolved Image")
-                    st.image(uploaded, width='stretch')
+                    st.image(uploaded)
 
                 st.divider()
 
@@ -235,7 +234,7 @@ elif page == "Issues Dashboard":
 
             issues = res.json()
 
-            if len(issues)==0:
+            if len(issues) == 0:
 
                 st.info("No issues recorded yet")
 
@@ -243,7 +242,7 @@ elif page == "Issues Dashboard":
 
                 df = pd.DataFrame(issues)
 
-                st.dataframe(df, width='stretch')
+                st.dataframe(df)
 
         else:
             st.error("Failed to fetch issues")
@@ -321,7 +320,7 @@ elif page == "Analytics":
                         }
                     )
 
-                    st.plotly_chart(fig, width='stretch')
+                    st.plotly_chart(fig, use_container_width=True)
 
                 with col2:
 
@@ -332,7 +331,7 @@ elif page == "Analytics":
                         title="Department Workload"
                     )
 
-                    st.plotly_chart(fig, width='stretch')
+                    st.plotly_chart(fig, use_container_width=True)
 
                 st.divider()
 
@@ -343,7 +342,7 @@ elif page == "Analytics":
                     title="Issue Status"
                 )
 
-                st.plotly_chart(fig, width='stretch')
+                st.plotly_chart(fig, use_container_width=True)
 
     except Exception:
 

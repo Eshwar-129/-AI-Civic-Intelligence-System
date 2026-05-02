@@ -73,7 +73,7 @@ if page == "Issue Detection":
                     res = requests.post(
                         f"{API_URL}/detect",
                         files={"file": (uploaded.name, uploaded.getvalue(), uploaded.type)},
-                        timeout=30,
+                        timeout=120,
                     )
                 except requests.exceptions.RequestException as e:
                     st.error(f"Detection request failed: {e}")

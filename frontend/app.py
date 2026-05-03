@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 import plotly.express as px
 import os
-#API_URL = "https://dhoesh123-ai-civic-issue.hf.space"
+#API_URL = "https://eshwar109-civic-intelligence-api.hf.space"
 API_URL = "https://eshwar109-ai-civic.hf.space"
 
 st.set_page_config(
@@ -65,41 +65,32 @@ if page == "Issue Detection":
 
     if uploaded:
 
-        st.image(uploaded, caption="Uploaded Image")
+        st.image(uploaded, caption="Uploaded Image", use_container_width=True)
 
         if st.button("🚀 Detect Issue"):
 
             with st.spinner("Running AI detection..."):
-                try:
-                    res = requests.post(
-                        f"{API_URL}/detect",
-                        files={"file": (uploaded.name, uploaded.getvalue(), uploaded.type)},
-                        timeout=120,
-                    )
-                except requests.exceptions.RequestException as e:
-                    st.error(f"Detection request failed: {e}")
-                    res = None
 
-            if res and res.status_code == 200:
+                res = requests.post(
+                    f"{API_URL}/detect",
+                    files={"file":(uploaded.name, uploaded.getvalue(), uploaded.type)}
+                )
+
+            if res.status_code == 200:
+
                 data = res.json()
 
                 st.success("Detection Completed")
 
                 if data.get("annotated_image"):
-                    raw_url = data["annotated_image"]
-                            
-                            # Replace the localhost part with your correct Hugging Face space URL
-                    if "http://localhost:8000" in raw_url:
-                        fixed_url = raw_url.replace("http://localhost:8000", API_URL)
-                    else:
-                        fixed_url = raw_url
-                st.info(f"[DEBUG] annotated_image value: {fixed_url}")
-                st.image(
-                    fixed_url,
-                    caption="Detected Issue"
-                )
 
-                col1, col2 = st.columns(2)
+                    st.image(
+                        data["annotated_image"],
+                        caption="Detected Issue",
+                        use_container_width=True
+                    )
+
+                col1,col2 = st.columns(2)
 
                 with col1:
                     st.metric("Issue Type", data.get("issue_type"))
@@ -124,22 +115,15 @@ if page == "Issue Detection":
 
                 st.subheader("Location")
 
-                st.write("Latitude:", lat)
-                st.write("Longitude:", lon)
+                st.write("Latitude:",lat)
+                st.write("Longitude:",lon)
 
                 if lat and lon:
-                    map_df = pd.DataFrame({"lat": [lat], "lon": [lon]})
+                    map_df = pd.DataFrame({"lat":[lat],"lon":[lon]})
                     st.map(map_df)
 
             else:
-                if res is None:
-                    st.error("Detection failed: no response (request exception)")
-                else:
-                    try:
-                        err_text = res.text
-                    except Exception:
-                        err_text = "<unreadable response>"
-                    st.error(f"Detection failed: status={res.status_code} - {err_text}")
+                st.error("Detection failed")
 
 
 # ======================================================
@@ -162,25 +146,20 @@ elif page == "Verification":
     # 2. Only proceed if BOTH the ID and the image are provided
     if uploaded and issue_id:
 
-        st.image(uploaded, caption="Repair Image Uploaded")
+        st.image(uploaded, caption="Repair Image Uploaded", use_container_width=True)
 
         if st.button("Verify Resolution"):
 
             with st.spinner("Verifying repair..."):
 
                 # 3. Send BOTH the file and the issue_id to the backend
-                try:
-                    res = requests.post(
-                        f"{API_URL}/verify",
-                        files={"file": (uploaded.name, uploaded.getvalue(), uploaded.type)},
-                        data={"issue_id": issue_id},  # <--- THIS IS THE MAGIC LINE
-                        timeout=30,
-                    )
-                except requests.exceptions.RequestException as e:
-                    st.error(f"Verification request failed: {e}")
-                    res = None
+                res = requests.post(
+                    f"{API_URL}/verify",
+                    files={"file": (uploaded.name, uploaded.getvalue(), uploaded.type)},
+                    data={"issue_id": issue_id}  # <--- THIS IS THE MAGIC LINE
+                )
 
-            if res and res.status_code == 200:
+            if res.status_code == 200:
 
                 data = res.json()
 
@@ -209,13 +188,13 @@ elif page == "Verification":
 
                         # Display it!
                         try:
-                            st.image(clean_original)
-                        except Exception:
+                            st.image(clean_original, use_container_width=True)
+                        except Exception as e:
                             st.error(f"Image found in DB, but missing from folder: {clean_original}")
 
                 with col2:
                     st.subheader("Resolved Image")
-                    st.image(uploaded)
+                    st.image(uploaded, use_container_width=True)
 
                 st.divider()
 
@@ -228,7 +207,7 @@ elif page == "Verification":
                     st.metric("Verification Result", data.get("verification"))
 
             else:
-                st.error(f"Verification failed: {res.text if res else 'No response'}")
+                st.error(f"Verification failed: {res.text}")
 
 # ======================================================
 # PAGE 3 — DASHBOARD
@@ -240,17 +219,13 @@ elif page == "Issues Dashboard":
 
     try:
 
-        try:
-            res = requests.get(f"{API_URL}/issues", timeout=20)
-        except requests.exceptions.RequestException as e:
-            st.error(f"Failed to fetch issues: {e}")
-            res = None
+        res = requests.get(f"{API_URL}/issues")
 
-        if res and res.status_code == 200:
+        if res.status_code == 200:
 
             issues = res.json()
 
-            if len(issues) == 0:
+            if len(issues)==0:
 
                 st.info("No issues recorded yet")
 
@@ -258,7 +233,7 @@ elif page == "Issues Dashboard":
 
                 df = pd.DataFrame(issues)
 
-                st.dataframe(df)
+                st.dataframe(df,use_container_width=True)
 
         else:
             st.error("Failed to fetch issues")
@@ -277,14 +252,11 @@ elif page == "Analytics":
 
     try:
 
-        try:
-            res = requests.get(f"{API_URL}/issues", timeout=20)
-        except requests.exceptions.RequestException as e:
-            st.error(f"Failed to load analytics data: {e}")
-            res = None
+        res = requests.get(f"{API_URL}/issues")
 
-        if not res:
+        if res.status_code != 200:
             st.error("Failed to load data")
+
         else:
 
             issues = res.json()
@@ -336,7 +308,7 @@ elif page == "Analytics":
                         }
                     )
 
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig,use_container_width=True)
 
                 with col2:
 
@@ -347,7 +319,7 @@ elif page == "Analytics":
                         title="Department Workload"
                     )
 
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig,use_container_width=True)
 
                 st.divider()
 
@@ -358,7 +330,7 @@ elif page == "Analytics":
                     title="Issue Status"
                 )
 
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig,use_container_width=True)
 
     except Exception:
 

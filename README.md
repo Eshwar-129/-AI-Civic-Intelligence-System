@@ -9,7 +9,7 @@ The **AI Civic Intelligence System** is an Agentic AI-based platform designed to
 
 The goal of this system is to reduce manual intervention, improve response time from authorities, and create a smart, automated civic monitoring solution using AI and intelligent workflows.
 
-**Live Demo:** [Streamlit Deployment]((https://bmgyiefpqwo4uspvwmpa67.streamlit.app/))
+**Live Demo:** [Streamlit Deployment]([https://bmgyiefpqwo4uspvwmpa67.streamlit.app/])
 
 ---
 

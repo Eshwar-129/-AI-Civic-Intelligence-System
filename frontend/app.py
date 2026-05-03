@@ -3,7 +3,8 @@ import requests
 import pandas as pd
 import plotly.express as px
 import os
-API_URL = "https://dhoesh123-ai-civic-issue.hf.space"
+#API_URL = "https://dhoesh123-ai-civic-issue.hf.space"
+API_URL = "https://eshwar109-ai-civic.hf.space"
 
 st.set_page_config(
     page_title="Civic AI Platform",

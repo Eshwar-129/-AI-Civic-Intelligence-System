@@ -93,14 +93,10 @@ if page == "Issue Detection":
                         fixed_url = raw_url.replace("http://localhost:8000", API_URL)
                     else:
                         fixed_url = raw_url
-
-                            # --- THE FINAL, CORRECT URL TO DISPLAY IS: ---
-                            # https://eshwar109-ai-civic.hf.space/runs/detect/predict-2/gar.jpeg
-                            # This combines the API_URL and the image path.
-                     st.image(
-                         fixed_url,
-                         caption="Detected Issue"
-                     )
+                st.image(
+                    fixed_url,
+                    caption="Detected Issue"
+                )
 
                 col1, col2 = st.columns(2)
 

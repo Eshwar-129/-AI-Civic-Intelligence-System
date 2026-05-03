@@ -98,9 +98,9 @@ if page == "Issue Detection":
                             # https://eshwar109-ai-civic.hf.space/runs/detect/predict-2/gar.jpeg
                             # This combines the API_URL and the image path.
                      st.image(
-                            fixed_url,
-                            caption="Detected Issue",
-                        )
+                         fixed_url,
+                         caption="Detected Issue"
+                     )
 
                 col1, col2 = st.columns(2)
 

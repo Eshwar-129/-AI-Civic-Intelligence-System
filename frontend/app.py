@@ -86,17 +86,14 @@ if page == "Issue Detection":
                 st.success("Detection Completed")
 
                 if data.get("annotated_image"):
-                    raw_url = data["annotated_image"]
+                    image_path = data["annotated_image"]
                     
-                    # Replace localhost with your Hugging Face Space URL
-                    if "http://localhost:8000" in raw_url:
-                        # Make sure to use the correct backend URL (see note below)
-                        fixed_url = raw_url.replace("http://localhost:8000", "https://eshwar109-ai-civic.hf.space") 
-                    else:
-                        fixed_url = raw_url
-
+                    # Combine your Hugging Face API URL with the image path
+                    # Example: https://eshwar109-ai-civic.hf.space + /runs/detect/...
+                    full_image_url = f"{API_URL.rstrip('/')}/{image_path.lstrip('/')}"
+                    
                     st.image(
-                        fixed_url,
+                        full_image_url,
                         caption="Detected Issue",
                     )
 

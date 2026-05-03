@@ -85,7 +85,7 @@ if page == "Issue Detection":
 
                 st.success("Detection Completed")
 
-               if data.get("annotated_image"):
+                if data.get("annotated_image"):
                     raw_url = data["annotated_image"]
                     
                     # Replace localhost with your Hugging Face Space URL

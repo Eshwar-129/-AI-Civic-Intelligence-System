@@ -93,6 +93,7 @@ if page == "Issue Detection":
                         fixed_url = raw_url.replace("http://localhost:8000", API_URL)
                     else:
                         fixed_url = raw_url
+                st.info(f"[DEBUG] annotated_image value: {fixed_url}")
                 st.image(
                     fixed_url,
                     caption="Detected Issue"

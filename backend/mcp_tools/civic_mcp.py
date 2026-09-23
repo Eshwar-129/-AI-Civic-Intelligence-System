@@ -410,7 +410,7 @@ def send_resolution_notification(
 
         # 4. Send the Email
         # (Reminder: Replace this with your newly generated key!)
-        api_key = "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"
+        api_key = "Enter your key"
         sg = SendGridAPIClient(api_key)
 
         response = sg.send(mail)

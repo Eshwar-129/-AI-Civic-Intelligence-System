@@ -5,7 +5,7 @@ Registers Civic AI tools for agent use.
 """
 import base64
 
-#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
+
 
 from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition, ContentId
 import json

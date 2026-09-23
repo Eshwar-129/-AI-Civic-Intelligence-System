@@ -123,7 +123,7 @@ from openai import OpenAI
 # OpenRouter client
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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"
+    api_key="your api key"
 )
 
 from typing import Optional, List
@@ -274,7 +274,7 @@ def send_issue_notification(
             attachment.disposition = Disposition("inline")
             attachment.content_id = ContentId("evidence_img")
             mail.attachment = attachment  # attaches the image to the email
-        api_key = "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"
+        api_key = "your api key"
         sg = SendGridAPIClient(api_key)
 
 
